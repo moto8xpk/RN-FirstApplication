@@ -6,12 +6,15 @@ import android.net.Uri;
 
 import com.facebook.react.PackageList;
 import com.facebook.react.ReactApplication;
+import com.facebook.reactnative.androidsdk.FBSDKPackage;
 import com.facebook.react.ReactInstanceManager;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.react.shell.MainReactPackage;
 import com.facebook.soloader.SoLoader;
 import com.awesomeproject.generated.BasePackageList;
+import com.facebook.FacebookSdk;
+import com.facebook.appevents.AppEventsLogger;
 
 import org.unimodules.adapters.react.ReactAdapterPackage;
 import org.unimodules.adapters.react.ModuleRegistryAdapter;
@@ -85,6 +88,10 @@ public class MainApplication extends Application implements ReactApplication {
     }
 
     initializeFlipper(this, getReactNativeHost().getReactInstanceManager());
+    FacebookSdk.sdkInitialize(getApplicationContext());
+
+    // If you want to use AppEventsLogger to log events.
+    AppEventsLogger.activateApp(this);
   }
 
   /**
