@@ -9,6 +9,8 @@ import {FacebookSignIn} from './FacebookSignIn';
 import Header from "./src/components/Header";
 
 import { FormLogin } from './FormLogin';
+import LoginScreen1 from "./src/components/LoginScreen";
+import ListScreen from "./src/components/ListScreen";
 
 const Stack = createStackNavigator();
 
@@ -40,11 +42,13 @@ const HomeComponent = ({ navigation }) => {
 export default function App() {
 	return (
 		<NavigationContainer>
-			<Stack.Navigator initialRouteName="FormLogin">
+			<Stack.Navigator initialRouteName="ListScreen" screenOptions={{ headerShown: false }} >
 				<Stack.Screen name="Home" component={HomeComponent}></Stack.Screen>
 				<Stack.Screen name="Settings" component={Settings}></Stack.Screen>
 				<Stack.Screen name="FormLogin" component={FormLogin}></Stack.Screen>
 				<Stack.Screen name="Header" component={Header}></Stack.Screen>
+				<Stack.Screen name="LoginScreen1" component={LoginScreen1} ></Stack.Screen>
+				<Stack.Screen name="ListScreen" component={ListScreen} ></Stack.Screen>
 			</Stack.Navigator>
 		</NavigationContainer>
 	);

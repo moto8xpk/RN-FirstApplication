@@ -3,6 +3,17 @@ import { Button } from 'react-native';
 
 import auth from '@react-native-firebase/auth';
 import FBSDK, { LoginManager,AccessToken } from 'react-native-fbsdk';
+import {
+  StyleSheet,
+  Text,
+  View,
+  TextInput,
+  Image,
+  Dimensions,
+  TouchableOpacity,
+  TouchableWithoutFeedback,
+  Keyboard,
+} from 'react-native';
 import * as Facebook from 'expo-facebook';
 
 const facebook = async () => {
@@ -13,15 +24,32 @@ const facebook = async () => {
 export class FacebookSignIn extends Component {
   render(){
     return (
-        <Button
-          title="Facebook Sign-In"
+        // <Button
+        //   title="Facebook Sign-In"
           
-          onPress={() => onFacebookButtonPress().then(() => alert('Signed in with Facebook!'))}
-        />
+        //   onPress={() => onFacebookButtonPress().then(() => alert('Signed in with Facebook!'))}
+        // />
+        <TouchableOpacity style={styles.facebookButton}  onPress={() => onFacebookButtonPress().then(() => alert('Signed in with Facebook!'))}>
+              <Text style={styles.loginButtonText}>Facebook</Text>
+        </TouchableOpacity>
       );
   }
 };
 
+const styles = StyleSheet.create({
+  facebookButton: {
+    backgroundColor: '#1095f4',
+    marginTop: 10,
+    paddingVertical: 10,
+    borderRadius: 4,
+  },
+  loginButtonText: {
+    color: '#fff',
+    textAlign: 'center',
+    fontSize: 20,
+    fontWeight: 'bold',
+  },
+});
 export default FacebookSignIn
 
 
