@@ -11,6 +11,9 @@ import Header from "./src/components/Header";
 import { FormLogin } from './FormLogin';
 import LoginScreen1 from "./src/components/LoginScreen";
 import ListScreen from "./src/components/ListScreen";
+import ButtonScreen from "./src/components/Button";
+import ImageScreen from "./src/components/ImageScreen";
+import { createAppContainer } from 'react-navigation';
 
 const Stack = createStackNavigator();
 
@@ -42,13 +45,15 @@ const HomeComponent = ({ navigation }) => {
 export default function App() {
 	return (
 		<NavigationContainer>
-			<Stack.Navigator initialRouteName="ListScreen" screenOptions={{ headerShown: false }} >
+			<Stack.Navigator initialRouteName="ButtonScreen" screenOptions={{ headerShown: false }} >
 				<Stack.Screen name="Home" component={HomeComponent}></Stack.Screen>
 				<Stack.Screen name="Settings" component={Settings}></Stack.Screen>
 				<Stack.Screen name="FormLogin" component={FormLogin}></Stack.Screen>
 				<Stack.Screen name="Header" component={Header}></Stack.Screen>
 				<Stack.Screen name="LoginScreen1" component={LoginScreen1} ></Stack.Screen>
 				<Stack.Screen name="ListScreen" component={ListScreen} ></Stack.Screen>
+				<Stack.Screen name="ButtonScreen" component={ButtonScreen} ></Stack.Screen>
+				<Stack.Screen name="ImageScreen" component={ImageScreen} ></Stack.Screen>
 			</Stack.Navigator>
 		</NavigationContainer>
 	);
