@@ -13,6 +13,9 @@ import LoginScreen1 from "./src/components/LoginScreen";
 import ListScreen from "./src/components/ListScreen";
 import ButtonScreen from "./src/components/Button";
 import ImageScreen from "./src/components/ImageScreen";
+import ColorScreen from "./src/components/ColorScreen";
+import SquareScreen from "./src/components/SquareScreen";
+import CounterScreen from "./src/components/Counter/CounterScreen";
 import { createAppContainer } from 'react-navigation';
 
 const Stack = createStackNavigator();
@@ -54,6 +57,9 @@ export default function App() {
 				<Stack.Screen name="ListScreen" component={ListScreen} ></Stack.Screen>
 				<Stack.Screen name="ButtonScreen" component={ButtonScreen} ></Stack.Screen>
 				<Stack.Screen name="ImageScreen" component={ImageScreen} ></Stack.Screen>
+				<Stack.Screen name="CounterScreen" component={CounterScreen} ></Stack.Screen>
+				<Stack.Screen name="ColorScreen" component={ColorScreen} ></Stack.Screen>
+				<Stack.Screen name="SquareScreen" component={SquareScreen} ></Stack.Screen>
 			</Stack.Navigator>
 		</NavigationContainer>
 	);
